@@ -1,0 +1,9 @@
+<input [type]="type"
+  [value]="value"
+  [placeholder]="placeholder || ''"
+  (change)="onChange($event.currentTarget.value)"
+  (keyup)="onChange($event.currentTarget.value)"
+>
+<span [ngClass]="{'u-supre-icon--delete-x' : value, 'u-supre-icon--search' : search && (!value || value.length === 0)}"
+  class="u-supre-icon" (click)="onChange('')">
+</span>

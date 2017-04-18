@@ -1,0 +1,18 @@
+
+:host{
+
+  position:relative;
+  display:inline-block;
+
+  input{
+    padding-right:2.5em;
+  }
+
+  span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .5em;
+  }
+
+}
