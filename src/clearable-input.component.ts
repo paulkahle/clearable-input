@@ -1,6 +1,13 @@
 import { Component, Input, Output, OnInit, forwardRef, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+
+/**
+ * ClearableInputComponent
+ *
+ * Input control with clear button to clear the input value.
+ * Implements ControlValueAccessor for compatibility with Angular Forms API
+ */
 @Component({
   selector: 'supre-clearable-input',
   templateUrl: './clearable-input.component.html',
@@ -26,9 +33,22 @@ export class ClearableInputComponent implements ControlValueAccessor {
   constructor() { }
 
   /**
-   * ClearableInputComponent
+   * onChange
+   * Value change handler
    *
-   * Input control with clear button to clear the input value.
+   */
+  private onChange(value) {
+    if(this.value === value)
+      return;
+      
+    this.value = value;
+    this.valueChange.emit(this.value);
+    this.propagateChange(this.value);
+  }
+
+  /**
+   * ControlValueAccessor Implementation for Angular Forms API compatibility
+   *
    */
   public writeValue(value: any) {
     if (value) {
@@ -41,12 +61,6 @@ export class ClearableInputComponent implements ControlValueAccessor {
   }
   // not used, used for touch input
   public registerOnTouched() { }
-
-  private onChange(value) {
-    this.value = value;
-    this.valueChange.emit(this.value);
-    this.propagateChange(this.value);
-  }
 
 
 }

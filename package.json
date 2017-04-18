@@ -1,5 +1,5 @@
 {
-  "name": "suprematism-toggle-switch",
+  "name": "suprematism-clearable-input",
   "version": "0.0.0",
   "license": "MIT",
   "main": "src/index.ts",
