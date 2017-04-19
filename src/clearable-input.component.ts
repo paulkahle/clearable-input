@@ -40,7 +40,7 @@ export class ClearableInputComponent implements ControlValueAccessor {
   private onChange(value) {
     if(this.value === value)
       return;
-      
+
     this.value = value;
     this.valueChange.emit(this.value);
     this.propagateChange(this.value);
@@ -51,7 +51,9 @@ export class ClearableInputComponent implements ControlValueAccessor {
    *
    */
   public writeValue(value: any) {
-    if (value) {
+    console.log("value 1");
+    if (value && !this.value === value) {
+      console.log("value 2");
       this.value = value;
     }
   }

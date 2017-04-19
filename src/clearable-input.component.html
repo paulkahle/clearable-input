@@ -1,9 +1,8 @@
 <input [type]="type"
-  [value]="value"
+  [ngModel]="value"
   [placeholder]="placeholder || ''"
-  (change)="onChange($event.currentTarget.value)"
-  (keyup)="onChange($event.currentTarget.value)"
+  (input)="onChange($event.currentTarget.value)"
 >
-<span [ngClass]="{'u-supre-icon--delete-x' : value, 'u-supre-icon--search' : search && (!value || value.length === 0)}"
+<span [ngClass]="{'u-supre-icon--delete-x' : value, 'u-supre-icon--search' : search && (!value2 || value2.length === 0)}"
   class="u-supre-icon" (click)="onChange('')">
 </span>

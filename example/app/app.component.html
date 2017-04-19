@@ -1,24 +1,26 @@
 <h3>Clearable Input</h3>
 
+
 <supre-clearable-input
-  type="number"
-  placeholder="Enter number"
+  type="text"
+  placeholder="Enter Search"
   [value]="value || ''"
+  [search]="true"
   (valueChange)="value = $event"
   >
 </supre-clearable-input>
 
 
-<div>Value: {{value}}</div>
+<div>Search: {{value}}</div>
 
+<br>
 <supre-clearable-input
-  type="text"
-  placeholder="Enter Search"
+  type="number"
+  placeholder="Enter number"
   [value]="value2 || ''"
-  [search]="true"
   (valueChange)="value2 = $event"
   >
 </supre-clearable-input>
 
 
-<div>Search: {{value2}}</div>
+<div>Value: {{value2}}</div>
